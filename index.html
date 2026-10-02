@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de Carlos Vergara — BlackWolf, diseñador gráfico y visual designer.">
+  <meta name="author" content="Carlos Vergara — BlackWolf">
+  <title>Carlos Vergara — BlackWolf | Diseñador Gráfico</title>
+
+  <!-- FUENTES Y LIBRERÍAS DE ICONOS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- HOJA DE ESTILOS PRINCIPAL -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+     01. LOADER / PANTALLA DE CARGA
+     ========================================================================== -->
+  <div class="loader" id="loader"><span>BW</span></div>
+
+  <!-- ==========================================================================
+     02. HEADER Y NAVEGACIÓN PRINCIPAL
+     ========================================================================== -->
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <!-- Logotipo / Marca -->
+      <a class="brand" href="#inicio" aria-label="BlackWolf inicio">
+        <span class="brand-mark">BW</span>
+        <span class="brand-text">
+          <strong>CARLOS VERGARA</strong>
+          <small>BLACKWOLF</small>
+        </span>
+      </a>
+
+      <!-- Enlaces de navegación -->
+      <nav id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Especialidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <!-- Herramientas (Cambio de tema y botón menú móvil) -->
+      <div class="nav-tools">
+        <button id="themeBtn" class="icon-btn" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+        <button id="menuBtn" class="menu-btn" aria-label="Abrir menú"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================================
+       03. SECCIÓN HERO (PORTADA / BIENVENIDA)
+       ========================================================================== -->
+    <section class="hero" id="inicio">
+      <div class="hero-noise"></div>
+      <div class="hero-grid"></div>
+
+      <div class="container hero-inner">
+        <!-- Columna de Texto Principal -->
+        <div class="hero-copy reveal">
+          <p class="kicker"><span></span> DISEÑADOR GRÁFICO / VISUAL DESIGNER</p>
+          <h1>CARLOS<br><em>VERGARA</em></h1>
+          <div class="alias">BLACK<span>WOLF</span></div>
+
+          <p class="hero-lead">
+            Transformo conceptos en identidades visuales, campañas y experiencias gráficas sólidas, fusionando estrategia, dirección creativa y atención al detalle.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#proyectos" style="position: relative; z-index: 10;">Explorar proyectos <i class="fa-solid fa-arrow-down"></i></a>
+            <a class="btn ghost" href="cv/CV-Carlos-Vergara.pdf" download style="position: relative; z-index: 10;">Descargar CV <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="hero-meta">
+            <span>TRUJILLO, PERÚ</span>
+            <span>DISPONIBLE PARA PROYECTOS</span>
+          </div>
+        </div>
+
+        <!-- Columna de Imagen / Foto de Perfil -->
+        <div class="hero-photo reveal photo-glitch-container">
+          <div class="photo-orbit"></div>
+          <div class="photo-frame">
+            <img src="img/wolf3D.jpg" alt="Carlos Vergara" class="glitch-img">
+            <div class="photo-caption">
+              <span>CV / 01</span>
+              <span>BLACKWOLF</span>
+            </div>
+          </div>
+          <div class="hero-tag tag-a">BRANDING</div>
+          <div class="hero-tag tag-b">ART<br>DIRECTION</div>
+          <div class="hero-tag tag-c">VISUAL<br>DESIGN</div>
+          <div class="hero-tag tag-d">Illustration</div>
+          <div class="hero-symbol">†</div>
+        </div>
+      </div>
+
+      <div class="hero-bottom container">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="line"></div>
+        <span>2026</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       04. SECCIÓN PERFIL / ACERCA DE
+       ========================================================================== -->
+    <section class="intro section" id="perfil">
+      <div class="container">
+        <div class="section-label reveal"><span>01</span><b>PERFIL</b></div>
+        <div class="intro-grid">
+          <div class="reveal">
+            <p class="display-copy">
+              Diseño para que una idea no solo se vea bien,
+              <span>sino que tenga algo que decir.</span>
+            </p>
+          </div>
+          <div class="body-copy reveal">
+            <p>
+              Soy <strong>Carlos Vergara</strong>, diseñador gráfico bajo el alias
+              <strong>BlackWolf</strong>. Soy disenador gráfico, publicista y también titulado en Ingeniería de Software. Mi perfil une lo mejor de dos mundos: la dirección de arte, el diseño visual y las estrategias publicitarias de alto impacto, respaldadas por un sólido conocimiento en programación.
+            </p>
+            <p>
+              Esta dualidad me permite entender un proyecto desde su concepto estético hasta su ejecución técnica. Mi portafolio reúne una cuidadosa selección de mis mejores trabajos, reflejando una visión donde la creatividad, la funcionalidad y el código trabajan de la mano.
+              <br>
+              (Este portafolio está desarrollado por mi persona con el lenguaje de programación HTML, CSS y JavaScript puro, sin frameworks ni librerías externas).
+            </p>
+            <a href="#contacto" class="text-link">Hablemos de un proyecto <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       05. SECCIÓN ESPECIALIDADES / SERVICIOS
+       ========================================================================== -->
+    <section class="services section" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span>02</span><b>ESPECIALIDADES</b></div>
+          <h2>Áreas donde<br><em>puedo aportar.</em></h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service reveal">
+            <span>01</span><i class="fa-solid fa-bezier-curve"></i>
+            <h3>Branding</h3>
+            <p>Identidades visuales, logotipos, sistemas gráficos y aplicaciones de marca.</p>
+            <small>IDENTIDAD / LOGO / BRAND SYSTEM</small>
+          </article>
+          <article class="service reveal">
+            <span>02</span><i class="fa-solid fa-bullhorn"></i>
+            <h3>Publicidad</h3>
+            <p>Campañas y piezas visuales pensadas para comunicar con claridad y presencia.</p>
+            <small>CAMPAÑAS / AFICHES / DIGITAL</small>
+          </article>
+          <article class="service reveal">
+            <span>03</span><i class="fa-solid fa-layer-group"></i>
+            <h3>Social Media</h3>
+            <p>Sistemas gráficos para contenido, lanzamientos y comunicación digital.</p>
+            <small>FEED / STORIES / CAMPAIGNS</small>
+          </article>
+          <article class="service reveal">
+            <span>04</span><i class="fa-solid fa-box-open"></i>
+            <h3>Packaging</h3>
+            <p>Conceptos de empaque, etiquetas y presentación visual de producto.</p>
+            <small>PACKAGING / MOCKUPS / PRODUCT</small>
+          </article>
+          <article class="service reveal">
+            <span>05</span><i class="fa-solid fa-camera-retro"></i>
+            <h3>Fotografía</h3>
+            <p>Captura, dirección y retoque fotográfico orientado a producto y concepto.</p>
+            <small>RETOQUE / DIRECCIÓN / PRODUCTO</small>
+          </article>
+          <article class="service reveal">
+            <span>06</span><i class="fa-solid fa-pen-nib"></i>
+            <h3>Ilustración</h3>
+            <p>Creación de recursos gráficos, personajes y estilos visuales personalizados.</p>
+            <small>VECTOR / ARTE / PERSONAJES</small>
+          </article>
+          <article class="service reveal">
+            <span>07</span><i class="fa-solid fa-clapperboard"></i>
+            <h3>Edición de Video</h3>
+            <p>Montaje, postproducción y piezas audiovisuales dinámicas para medios digitales.</p>
+            <small>MOTION / CORTE / POSTPRODUCCIÓN</small>
+          </article>
+          <article class="service reveal">
+            <span>08</span><i class="fa-solid fa-code"></i>
+            <h3>Diseño Web</h3>
+            <p>Interfaces UI/UX y maquetación frontend respaldadas por ingeniería de software.</p>
+            <small>UI/UX / FRONTEND / WEB</small>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+       06. SECCIÓN PORTAFOLIO / PROYECTOS
+       ========================================================================== -->
+    <section class="portfolio section" id="proyectos">
+      <div class="container">
+        <div class="section-head portfolio-head reveal">
+          <div>
+            <div class="section-label"><span>03</span><b>PORTAFOLIO</b></div>
+            <h2>Proyectos<br><em>profesionales.</em></h2>
+          </div>
+          <p>
+            Selección desarrollada para demostrar dirección visual,
+            branding, publicidad, packaging y contenido digital.
+          </p>
+        </div>
+
+        <!-- Filtros de categoría -->
+        <div class="filters reveal">
+          <button class="filter active" data-filter="all">TODOS</button>
+          <button class="filter" data-filter="branding">BRANDING</button>
+          <button class="filter" data-filter="advertising">PUBLICIDAD</button>
+          <button class="filter" data-filter="social">SOCIAL</button>
+          <button class="filter" data-filter="packaging">PACKAGING</button>
+          <button class="filter" data-filter="editorial">EDITORIAL</button>
+          <!-- <button class="filter" data-filter="fotografía">FOTOGRAFÍA</button> -->
+          <button class="filter" data-filter="illustration">ILUSTRACIÓN</button>
+          <button class="filter" data-filter="web">PROGRAMACIÓN</button>
+        </div>
+
+        <!-- Cuadrícula de Proyectos -->
+        <div class="project-grid">
+          <article class="project featured reveal" data-category="branding" data-project="0">
+            <div class="project-media"><img src="img/projects/milagro.jpg" alt="Mercado Ecológico El Milagro branding"></div>
+            <div class="project-info"><span>01 / BRANDING</span><h3>MERCADO MAYORISTA ECOLÓGICO EL MILAGRO</h3><p>Identidad visual ecológica</p></div>
+          </article>
+
+          <article class="project reveal" data-category="branding packaging" data-project="1">
+            <div class="project-media"><img src="img/projects/leyabyte.jpg" alt="Leyabyte branding"></div>
+            <div class="project-info"><span>02 / BRANDING</span><h3>LEYABYTE</h3><p>Identidad y packaging</p></div>
+          </article>
+
+          <article class="project reveal" data-category="advertising" data-project="2">
+            <div class="project-media"><img src="img/projects/infinitylens.jpg" alt="INFINITYLENS campaña publicitaria"></div>
+            <div class="project-info"><span>03 / PUBLICIDAD</span><h3>INFINITYLENS</h3><p>Campaña de producto</p></div>
+          </article>
+
+          <article class="project reveal" data-category="social" data-project="3">
+            <div class="project-media"><img src="img/projects/cvcovesa.jpg" alt="CV COVESA campaña para redes"></div>
+            <div class="project-info"><span>04 / SOCIAL MEDIA</span><h3>CV COVESA</h3><p>Publicación visual para sus redes sociales</p></div>
+          </article>
+
+          <article class="project reveal" data-category="advertising" data-project="4">
+            <div class="project-media"><img src="img/projects/mrlucas.jpg" alt="MR. LUCAS producto comestible"></div>
+            <div class="project-info"><span>05 / PUBLICIDAD</span><h3>MR. LUCAS</h3><p>Producto comestible</p></div>
+          </article>
+
+          <article class="project reveal" data-category="editorial" data-project="5">
+            <div class="project-media"><img src="img/projects/06-afterlight-editorial.jpg" alt="Afterlight póster editorial"></div>
+            <div class="project-info"><span>06 / EDITORIAL</span><h3>AFTERLIGHT</h3><p>Póster / evento cultural</p></div>
+          </article>
+          
+          <article class="project reveal" data-category="advertising" data-project="6">
+            <div class="project-media"><img src="img/projects/mikonos.jpg" alt="Mikonos póster editorial"></div>
+            <div class="project-info"><span>06 / PUBLICIDAD</span><h3>MIKONOS</h3><p>Póster / evento publicitario</p></div>
+          </article>
+
+          <article class="project reveal" data-category="web" data-project="7">
+            <div class="project-media"><img src="img/projects/pagina-infinitylens.jpg" alt="InfinityLens página web"></div>
+            <div class="project-info"><span>08 / DISEÑO WEB</span><h3>INFINITYLENS</h3><p>Plataforma UI/UX y Frontend</p></div>
+          </article>
+          
+          <article class="project reveal" data-category="illustration" data-project="8">
+            <div class="project-media"><img src="img/projects/ilustracion-autoretrato.jpg" alt="ILUSTRACIÓN autoretrato"></div>
+            <div class="project-info"><span>09 / Ilustración digital</span><h3>ILUSTRACIÓN AUTORETRATO</h3><p>ilustración de un Autoretrato de mi fotografía</p></div>
+          </article>
+          
+          <article class="project reveal" data-category="illustration" data-project="9">
+            <div class="project-media"><img src="img/projects/elmochero.jpg" alt="ILUSTRACIÓN personaje El Mochero"></div>
+            <div class="project-info"><span>10 / Ilustración digital</span><h3>ILUSTRACIÓN PERSONAJE</h3><p>ilustración de un personaje para el restaurante El Mochero</p></div>
+          </article>
+          
+          <!-- <article class="project reveal" data-category="Fotografia" data-project="10">
+            <div class="project-media"><img src="img/projects/fotografia-elmochero.jpg" alt="FOTOGRAFÍA restaurante El Mochero"></div>
+            <div class="project-info"><span>11 / Fotografía</span><h3>FOTOGRAFÍA</h3><p>fotografía del restaurante El Mochero</p></div>
+          </article>  -->
+    </section>
+
+    <!-- ==========================================================================
+     11. VENTANA MODAL (DETALLES DE PROYECTOS)
+     ========================================================================== -->
+  <div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+      <div class="modal-copy">
+        <span id="modalCat"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-meta">
+          <div><small>TIPO</small><b id="modalType"></b></div>
+          <div><small>ROL</small><b>Dirección y diseño visual</b></div>
+          <div><small>ESTADO</small><b>Proyecto profesional</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ==========================================================================
+       07. SECCIÓN PROCESO DE TRABAJO
+       ========================================================================== -->
+    <section class="process section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span>04</span><b>COMO PROCESO</b></div>
+          <h2>Una idea.<br><em>Un sistema visual.</em></h2>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal"><span><h2>I</h2></span><h3>Descubrir</h3><p>Objetivos, contexto, audiencia y referencias.</p></div>
+          <div class="process-step reveal"><span><h2>II</h2></span><h3>Conceptualizar</h3><p>Dirección visual, moodboard y concepto.</p></div>
+          <div class="process-step reveal"><span><h2>III</h2></span><h3>Diseñar</h3><p>Composición, tipografía, color y sistema gráfico.</p></div>
+          <div class="process-step reveal"><span><h2>IV</h2></span><h3>Aplicar</h3><p>Mockups, piezas finales y adaptaciones.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       08. SECCIÓN HERRAMIENTAS / SOFTWARE
+       ========================================================================== -->
+    <section class="tools section">
+      <div class="container tools-inner reveal">
+        <div>
+          <div class="section-label"><span>05</span><b>HERRAMIENTAS QUE USO</b></div>
+          <h2>El software es la herramienta.<br><em>La idea es lo importante.</em></h2>
+        </div>
+        
+        <!-- Lista de Herramientas Actualizada con Logos -->
+        <div class="tool-list-logos">
+          
+          <!-- Photoshop -->
+          <div class="tool-logo-item" title="Adobe Photoshop">
+            <img src="img/logos/photoshop.png" alt="Logo de Adobe Photoshop" loading="lazy">
+          </div>
+          
+          <!-- Illustrator -->
+          <div class="tool-logo-item" title="Adobe Illustrator">
+            <img src="img/logos/illustrator.png" alt="Logo de Adobe Illustrator" loading="lazy">
+          </div>
+                  
+          <!-- After Effects -->
+          <div class="tool-logo-item" title="Adobe After Effects">
+            <img src="img/logos/AfterEffect.png" alt="Logo de Adobe After Effects" loading="lazy">
+          </div>
+          
+          <!-- Premiere Pro -->
+          <div class="tool-logo-item" title="Adobe Premiere Pro">
+            <img src="img/logos/premiere.png" alt="Logo de Adobe Premiere Pro" loading="lazy">
+          </div>
+          
+          <!-- Figma -->
+          <div class="tool-logo-item" title="Figma">
+            <img src="img/logos/figma.png" alt="Logo de Figma" loading="lazy">
+          </div>
+          
+          <!-- Canva -->
+          <div class="tool-logo-item" title="Canva">
+            <img src="img/logos/canva.png" alt="Logo de Canva" loading="lazy">
+          </div>
+
+          <!-- CorelDraw -->
+          <div class="tool-logo-item" title="CorelDraw">
+            <img src="img/logos/coreldraw.png" alt="Logo de CorelDraw" loading="lazy">
+          </div>
+          
+          <!-- CapCut -->
+          <div class="tool-logo-item" title="CapCut">
+            <img src="img/logos/capcut.png" alt="Logo de CapCut" loading="lazy">
+          </div>
+          
+          <!-- HTML / CSS / JS (Usando un logo representativo o combinad) -->
+          <div class="tool-logo-item" title="HTML / CSS / JS">
+            <img src="img/logos/web-techs.png" alt="Logos de HTML, CSS y JS" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       09. SECCIÓN CONTACTO
+       ========================================================================== -->
+    <section class="contact section" id="contacto">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div>
+            <div class="section-label"><span>06</span><b>CONTACTO</b></div>
+            <h2>¿Tienes una idea?<br><em>Hablemos.</em></h2>
+            <p>Disponible para oportunidades laborales, proyectos freelance y colaboraciones creativas.</p>
+            <div class="contact-actions">
+              <!-- Cambiado a WhatsApp con enlace directo y target="_blank" -->
+              <a class="btn primary" href="https://wa.me/51951248380?text=Hola%20Carlos,%20me%20interesa%20contactar%20contigo%20para%20un%20proyecto." target="_blank" rel="noopener noreferrer">Escríbeme <i class="fa-brands fa-whatsapp"></i></a>
+              
+              <!-- Asegurado el enlace del CV (se recomienda usar guiones en vez de espacios en la ruta del archivo) -->
+              <a class="btn ghost" href="cv/CV-Carlos-Vergara.pdf" download>Mi CV <i class="fa-solid fa-download"></i></a>
+            </div>
+          </div>
+          <div class="contact-mark">BW</div>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:raulvergara8a@gmail.com"><i class="fa-solid fa-envelope"></i>raulvergara8a@gmail.com</a>
+          <a href="https://wa.me/51951248380" target="_blank"><i class="fa-brands fa-whatsapp"></i> +51 951 248 380</a>
+          <!-- <a href="https://www.behance.net/carlosvergara8a" target="_blank"><i class="fa-brands fa-behance"></i> Behance</a> -->
+          <a href="https://www.linkedin.com/in/carlos-vergara8a" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+     10. PIE DE PÁGINA (FOOTER)
+     ========================================================================== -->
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>CARLOS VERGARA</strong><span>BLACKWOLF</span></div>
+      <p>© 2026 Carlos Vergara. Portafolio profesional.</p>
+      <span>GRAPHIC DESIGN / VISUAL DESIGN</span>
+    </div>
+  </footer>
+
+    <!-- Cursor personalizado -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-follower" id="cursorFollower"></div>
+
+  <!-- ==========================================================================
+     12. SCRIPT DE JAVASCRIPT
+     ========================================================================== -->
+  <script src="js/script.js"></script>
+</body>
+</html>
