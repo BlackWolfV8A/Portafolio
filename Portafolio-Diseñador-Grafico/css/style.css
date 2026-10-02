@@ -1,0 +1,1348 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL (:root)
+   ========================================================================== */
+:root {
+  --bg: #071012;
+  --bg2: #0b1719;
+  --surface: #102124;
+  --text: #edf7f5;
+  --muted: #8da3a5;
+  --line: rgba(237, 247, 245, .12);
+  --accent: #d7ff45;
+  --cyan: #62e6f4;
+  --max: 1240px;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+body.light {
+  --bg: #f2f5f3;
+  --bg2: #fff;
+  --surface: #e8efed;
+  --text: #0a1416;
+  --muted: #59686a;
+  --line: rgba(10, 20, 22, .13);
+}
+
+/* ==========================================================================
+   2. RESET Y ESTILOS BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition: .4s;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: min(calc(100% - 48px), var(--max));
+  margin: auto;
+}
+
+/* ==========================================================================
+   3. COMPONENTES GLOBALES (Loader, Botones, Secciones)
+   ========================================================================== */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #071012;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  transition: .6s;
+}
+
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader span {
+  font: 700 18px "Space Grotesk";
+  letter-spacing: .2em;
+  color: var(--accent);
+}
+
+.section {
+  padding: 135px 0;
+}
+
+.section-label {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: var(--muted);
+}
+
+.section-label span {
+  color: var(--accent);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.section-head h2, 
+.contact h2 {
+  font: 600 clamp(42px, 6vw, 76px)/.92 "Space Grotesk";
+  letter-spacing: -.055em;
+  margin-top: 22px;
+}
+
+.section-head h2 em, 
+.contact h2 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  transition: .3s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #071012;
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(215, 255, 69, .13);
+}
+
+.btn.ghost {
+  border: 1px solid var(--line);
+}
+
+.btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   4. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: .35s;
+}
+
+.site-header.scrolled {
+  background: rgba(7, 16, 18, .78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+body.light .site-header.scrolled {
+  background: rgba(242, 245, 243, .8);
+}
+
+.nav {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font: 700 13px "Space Grotesk";
+  letter-spacing: .08em;
+}
+
+.brand-text {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-text strong {
+  font: 700 11px "Space Grotesk";
+  letter-spacing: .14em;
+}
+
+.brand-text small {
+  font-size: 8px;
+  letter-spacing: .25em;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .08em;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.nav-tools {
+  display: flex;
+  gap: 9px;
+}
+
+.icon-btn, 
+.menu-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--accent);
+  color: #071012;
+}
+
+.menu-btn {
+  display: none;
+  border-radius: 8px;
+}
+
+.menu-btn span {
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: currentColor;
+  margin: 4px auto;
+}
+
+/* ==========================================================================
+   5. SECCIÓN HERO
+   ========================================================================== */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(98, 230, 244, .035) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(98, 230, 244, .035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle at 60% 50%, black, transparent 75%);
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: .04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr .82fr;
+  gap: 80px;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--muted);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.kicker span {
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font: 700 clamp(64px, 9vw, 125px)/.82 "Space Grotesk";
+  letter-spacing: -.07em;
+  margin-top: 24px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text);
+}
+
+.alias {
+  font: 500 clamp(22px, 3vw, 36px) "Space Grotesk";
+  letter-spacing: .28em;
+  margin-top: 25px;
+}
+
+.alias span {
+  color: var(--accent);
+}
+
+.hero-lead {
+  max-width: 560px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 35px;
+  margin-top: 50px;
+  font-size: 8px;
+  letter-spacing: .18em;
+  color: var(--muted);
+}
+
+.hero-meta span:last-child {
+  color: var(--accent);
+}
+
+/* ======================================================================
+   FOTO PRINCIPAL — BLACKWOLF
+   La fotografía se muestra completa sin recortar
+   ====================================================================== */
+
+.hero-photo {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: calc(100vh - 110px);
+  min-height: 650px;
+
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Marco de la fotografía */
+
+.photo-frame {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* FOTO COMPLETA */
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  display: block;
+
+  filter:
+    saturate(.85)
+    contrast(1.04);
+
+  transition: transform .8s var(--ease);
+}
+
+
+/* Brillo cinematográfico */
+
+.photo-frame::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(98, 230, 244, .10),
+      transparent 50%,
+      rgba(215, 255, 69, .06)
+    );
+
+  mix-blend-mode: screen;
+
+  pointer-events: none;
+}
+
+.photo-frame:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(98, 230, 244, .12), transparent 55%, rgba(215, 255, 69, .08));
+  mix-blend-mode: screen;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: .16em;
+  z-index: 2;
+}
+
+.photo-orbit {
+  position: absolute;
+  inset: -35px -35px 35px 35px;
+  border: 1px solid rgba(98, 230, 244, .15);
+  border-radius: 50%;
+  transform: rotate(-16deg);
+}
+
+.hero-tag {
+  position: absolute;
+  background: rgba(7, 16, 18, .75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  padding: 12px;
+  font-size: 8px;
+  letter-spacing: .16em;
+  color: var(--accent);
+}
+
+.tag-a { left: -30px; top: 18%; }
+.tag-b { right: -30px; bottom: 18%; }
+
+.hero-tag.tag-c {
+  top: -15px;
+  right: 35%;
+  transform: translateX(50%);
+}
+
+.hero-tag.tag-d {
+  bottom: -15px;
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+.hero-symbol {
+  position: absolute;
+  right: -35px;
+  top: 4%;
+  font-size: 32px;
+  color: var(--accent);
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 8px;
+  letter-spacing: .2em;
+  color: var(--muted);
+}
+
+.hero-bottom .line {
+  width: 80px;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ==========================================================================
+   6. SECCIÓN INTRO / ACERCA DE
+   ========================================================================== */
+.intro {
+  background: var(--bg2);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 100px;
+  margin-top: 70px;
+}
+
+.display-copy {
+  font: 500 clamp(38px, 4.5vw, 62px)/1.02 "Space Grotesk";
+  letter-spacing: -.05em;
+}
+
+.display-copy span {
+  color: var(--accent);
+}
+
+.body-copy {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.body-copy p+p {
+  margin-top: 18px;
+}
+
+.body-copy strong {
+  color: var(--text);
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 28px;
+  color: var(--accent);
+  font-size: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   7. SECCIÓN DE SERVICIOS
+   ========================================================================== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.service {
+  min-height: 340px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px;
+  position: relative;
+  transition: .35s;
+}
+
+.service:hover {
+  background: var(--surface);
+  transform: translateY(-5px);
+}
+
+.service > span {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.service > i {
+  font-size: 24px;
+  color: var(--accent);
+  margin: 35px 0 75px;
+}
+
+.service h3 {
+  font: 500 25px "Space Grotesk";
+  margin-bottom: 12px;
+}
+
+.service p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.service small {
+  display: block;
+  color: var(--muted);
+  font-size: 7px;
+  letter-spacing: .13em;
+  margin-top: 24px;
+}
+
+/* ==========================================================================
+   8. SECCIÓN PORTAFOLIO / PROYECTOS
+   ========================================================================== */
+.portfolio {
+  background: var(--bg2);
+}
+
+.portfolio-head > p {
+  max-width: 350px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.filter {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-size: 9px;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
+
+.filter.active, 
+.filter:hover {
+  background: var(--accent);
+  color: #071012;
+  border-color: var(--accent);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 24px;
+}
+
+.project {
+  cursor: pointer;
+}
+
+.project.hidden {
+  display: none;
+}
+
+.project-media {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.project.featured .project-media {
+  aspect-ratio: 16/10;
+}
+
+.project-media img {
+  height: 100%;
+  object-fit: cover;
+  transition: .8s var(--ease);
+}
+
+.project:hover .project-media img {
+  transform: scale(1.045);
+}
+
+.project-info {
+  padding-top: 15px;
+}
+
+.project-info span {
+  font-size: 8px;
+  letter-spacing: .18em;
+  color: var(--accent);
+}
+
+.project-info h3 {
+  font: 500 22px "Space Grotesk";
+  margin-top: 7px;
+}
+
+.project-info p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* ==========================================================================
+   9. SECCIÓN DE PROCESO
+   ========================================================================== */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.process-step {
+  padding: 28px;
+  min-height: 240px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.process-step span {
+  font-size: 9px;
+  color: var(--accent);
+}
+
+.process-step h3 {
+  font: 500 24px "Space Grotesk";
+  margin: 60px 0 10px;
+}
+
+.process-step p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   10. SECCIÓN DE HERRAMIENTAS (TOOLS)
+   ========================================================================== */
+.tools {
+  background: var(--surface);
+}
+
+.tools-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.tools h2 {
+  font: 500 clamp(36px, 4vw, 58px)/1 "Space Grotesk";
+  letter-spacing: -.04em;
+  margin-top: 25px;
+}
+
+.tools h2 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tool-list span {
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+  transition: .3s;
+}
+
+.tool-list span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   11. SECCIÓN DE CONTACTO Y FOOTER
+   ========================================================================== */
+.contact {
+  padding-bottom: 100px;
+}
+
+.contact-box {
+  min-height: 460px;
+  background: linear-gradient(135deg, var(--surface), transparent);
+  border: 1px solid var(--line);
+  padding: 65px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-box p {
+  max-width: 500px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 25px 0;
+}
+
+.contact-mark {
+  position: absolute;
+  right: -60px;
+  bottom: -130px;
+  font: 700 400px/.8 "Space Grotesk";
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(215, 255, 69, .12);
+  pointer-events: none;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.contact-links a {
+  font-size: 16px; /* Ajusta este valor al tamaño que prefieras (ej. 16px, 18px, 1.1rem) */
+  color: var(--muted);
+  transition: .3s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+}
+
+.contact-links i {
+  margin-right: 7px;
+  font-size: 1.1em; /* Hace que el ícono escale de forma proporcional al texto */
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+
+.footer-inner div {
+  display: grid;
+  gap: 3px;
+}
+
+.footer-inner strong {
+  font: 700 11px "Space Grotesk";
+  color: var(--text);
+}
+
+.footer-inner span {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   12. MODAL Y ANIMACIONES (REVEAL)
+   ========================================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  opacity: 0;
+  visibility: hidden;
+  transition: .35s;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .82);
+  backdrop-filter: blur(14px);
+}
+
+.modal-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -47%) scale(.96);
+  width: min(1080px, calc(100% - 32px));
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  transition: .4s;
+}
+
+.modal.active .modal-card {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modificado para que la zona de la imagen se adapte y centre contenido de cualquier tamaño */
+.modal-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #07090b; /* Fondo sutil para rellenar espacios libres si la imagen es muy vertical u horizontal */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  object-fit: contain; /* Cambiado de 'cover' a 'contain' para que la imagen NUNCA se corte */
+}
+
+.modal-copy {
+  padding: 60px 45px;
+}
+
+.modal-copy > span {
+  font-size: 9px;
+  letter-spacing: .18em;
+  color: var(--accent);
+}
+
+.modal-copy h2 {
+  font: 500 46px "Space Grotesk";
+  margin: 15px 0;
+}
+
+.modal-copy p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.modal-meta {
+  border-top: 1px solid var(--line);
+  margin-top: 35px;
+  padding-top: 25px;
+  display: grid;
+  gap: 18px;
+}
+
+.modal-meta div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.modal-meta small {
+  font-size: 8px;
+  color: var(--muted);
+  letter-spacing: .15em;
+}
+
+.modal-meta b {
+  font-size: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s ease, transform .8s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ==========================================================================
+   13. DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1000px) {
+  nav {
+    position: fixed;
+    left: 0;
+    top: 88px;
+    width: 100%;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 25px;
+    display: grid;
+    gap: 20px;
+    transform: translateY(-150%);
+    transition: .4s;
+  }
+
+  nav.open {
+    transform: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .hero-photo {
+    justify-self: center;
+    width: min(480px, 85%);
+  }
+
+  .service-grid, 
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro-grid, 
+  .tools-inner {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(calc(100% - 30px), var(--max));
+  }
+
+  .nav {
+    height: 74px;
+  }
+
+  .site-header.scrolled {
+    background: rgba(7, 16, 18, .92);
+  }
+
+  nav {
+    top: 74px;
+  }
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-meta {
+    gap: 14px;
+    flex-direction: column;
+    margin-top: 35px;
+  }
+
+  .hero-photo {
+    width: 82%;
+  }
+
+  .tag-a { left: -20px; }
+  .tag-b { right: -20px; }
+
+  .hero-bottom {
+    display: none;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .portfolio-head > p {
+    margin-top: 20px;
+  }
+
+  .intro-grid {
+    margin-top: 45px;
+  }
+
+  .service-grid, 
+  .process-grid, 
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project.featured .project-media, 
+  .project-media {
+    aspect-ratio: 4/3;
+  }
+
+  .contact-box {
+    padding: 40px 25px;
+    min-height: 430px;
+  }
+
+  .contact-mark {
+    font-size: 250px;
+    right: -45px;
+    bottom: -70px;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-card {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+  }
+
+  .modal-image {
+    min-height: 300px;
+  }
+
+  .modal-copy {
+    padding: 35px 25px;
+  }
+
+  .modal-copy h2 {
+    font-size: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   EFECTO GLITCH VERTICAL A COLOR (ESTILO CIBERNETICO / TV)
+   ========================================================================== */
+.photo-glitch-container .photo-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-glitch-container:hover .glitch-img {
+  animation: tvGlitchColorVertical 0.3s infinite steps(5, end);
+  filter: contrast(150%) saturate(180%);
+}
+
+@keyframes tvGlitchColorVertical {
+  0% {
+    transform: translateX(0);
+    clip-path: inset(5px 10px 10px 5px);
+    filter: drop-shadow(2px 0 0 #00ffcc) drop-shadow(-5px 10px 30 #ff0055);
+  }
+  20% {
+    transform: translateX(-4px);
+    /* Cortes verticales (columnas) en lugar de horizontales */
+    clip-path: inset(0 60% 0 15%);
+    filter: drop-shadow(-4px 0 0 #00ffcc) drop-shadow(4px 0 0 #ff0055);
+  }
+  40% {
+    transform: translateX(4px);
+    clip-path: inset(0 15% 0 50%);
+    filter: drop-shadow(3px 0 0 #3300ff) drop-shadow(-3px 0 0 #00ffcc);
+  }
+  60% {
+    transform: translateX(-2px);
+    clip-path: inset(0 70% 0 10%);
+    filter: drop-shadow(-5px 0 0 #ff0055);
+  }
+  80% {
+    transform: translateX(3px);
+    clip-path: inset(0 5% 0 75%);
+    filter: drop-shadow(4px 0 0 #00ffcc);
+  }
+  100% {
+    transform: translateX(0);
+    clip-path: inset(5px 10px 10px 5px);
+    filter: drop-shadow(2px 0 0 #00ffcc) drop-shadow(-5px 10px 30 #ff0055);
+  }
+}
+
+/* ==========================================================================
+   CURSOR PERSONALIZADO FLOTANTE
+   ========================================================================== */
+/* Ocultar cursor por defecto en desktop y activar el nuestro */
+@media (min-width: 768px) {
+  body {
+    cursor: default; /* O 'none' si deseas ocultar completamente el puntero nativo */
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #00ffcc;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 10px #00ffcc;
+  }
+
+  .custom-cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(0, 255, 204, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+  }
+
+  /* Efecto al pasar sobre enlaces o botones */
+  a:hover ~ .custom-cursor-follower,
+  button:hover ~ .custom-cursor-follower,
+  .btn:hover ~ .custom-cursor-follower {
+    width: 55px;
+    height: 55px;
+    background-color: rgba(0, 255, 204, 0.1);
+    border-color: #00ffcc;
+  }
+}
+
+/* Estilos para el nuevo contenedor de la lista */
+.tool-list-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Espacio entre logos */
+  justify-content: center; /* Centra los logos en la fila */
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Contenedor individual de cada logo */
+.tool-logo-item {
+  width: 60px; /* Fija un ancho máximo para todos los logos */
+  height: 60px; /* Fija un alto fijo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* Las imágenes dentro de los contenedores */
+.tool-logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Mantiene la proporción del logo */
+  
+  /* EFECTO OPCIONAL: Escala de grises por defecto */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+/* EFECTO OPCIONAL: Al pasar el ratón a color */
+.tool-logo-item:hover {
+  transform: scale(1.1); /* Un pequeño zoom */
+}
+
+.tool-logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
